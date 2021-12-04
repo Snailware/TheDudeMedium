@@ -17,5 +17,6 @@ namespace MediumLib
 		public static List<string> Conjunctions { get; set; }
 		public static List<string> Interjections { get; set; }
 		public static List<string> ImagePaths { get; set; }
+		public static List<string> SentenceStructures { get; set; }
 	}
 }
