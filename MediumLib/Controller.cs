@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MediumLib
 {
+	/// <summary>
+	/// program controller. 
+	/// </summary>
 	public static class Controller
 	{
 		/// <summary>
@@ -39,53 +42,16 @@ namespace MediumLib
 			}
 		}
 
+		/// <summary>
+		/// create prophecy randomly using model data. 
+		/// </summary>
+		/// <returns>randomly generated Prophecy obj.</returns>
 		public static Prophecy CreateProphecy()
 		{
-			string text = null;
-			string line = Model.SentenceStructures[RandomSeed.Next(0, Model.SentenceStructures.Count)];
-			foreach (string partOfSpeech in line.Split(','))
-			{
-				string word = null;
-				switch (partOfSpeech)
-				{
-					case "noun":
-						word = Model.Nouns[RandomSeed.Next(0, Model.Nouns.Count)];
-						break;
-					case "pronoun":
-						word = Model.Pronouns[RandomSeed.Next(0, Model.Pronouns.Count)];
-						break;
-					case "verb":
-						word = Model.Verbs[RandomSeed.Next(0, Model.Verbs.Count)];
-						break;
-					case "adjective":
-						word = Model.Adjectives[RandomSeed.Next(0, Model.Adjectives.Count)];
-						break;
-					case "adverb":
-						word = Model.Adverbs[RandomSeed.Next(0, Model.Adverbs.Count)];
-						break;
-					case "preposition":
-						word = Model.Prepositions[RandomSeed.Next(0, Model.Prepositions.Count)];
-						break;
-					case "conjunction":
-						word = Model.Conjunctions[RandomSeed.Next(0, Model.Conjunctions.Count)];
-						break;
-					case "interjection":
-						word = Model.Interjections[RandomSeed.Next(0, Model.Interjections.Count)];
-						break;
-				}
-				if (!string.IsNullOrWhiteSpace(text))
-				{
-					text = $"{text} {word}";
-				}
-				else
-				{
-					text = word;
-				}
-			}
-			string imagePath = Model.ImagePaths[RandomSeed.Next(0, Model.ImagePaths.Count)];
+			string sentenceStructure = Randomizer.GetString(Model.SentenceStructures);
+			string text = Randomizer.GetSentence(sentenceStructure);
+			string imagePath = Randomizer.GetString(Model.ImagePaths);
 			return new Prophecy(text, imagePath);
 		}
-
-		private static Random RandomSeed { get; } = new Random();
 	}
 }

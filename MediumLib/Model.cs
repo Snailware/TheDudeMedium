@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MediumLib
 {
+	/// <summary>
+	/// data model for program.
+	/// </summary>
 	public static class Model
 	{
 		public static List<string> Nouns { get; set; }

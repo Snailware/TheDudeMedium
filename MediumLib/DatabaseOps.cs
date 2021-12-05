@@ -175,6 +175,5 @@ namespace MediumLib
 		/// sql connection obj to be used in queries.
 		/// </summary>
 		private static SqlConnection Connection { get; set; }
-
 	}
 }
