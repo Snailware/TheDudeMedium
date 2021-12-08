@@ -13,6 +13,16 @@ namespace MediumLib
 	public static class FileOps
 	{
 		/// <summary>
+		/// extract database connection string from file.
+		/// </summary>
+		/// <param name="filePath">path to connection string file.</param>
+		/// <returns>connection string.</returns>
+		public static string GetConnectionString(string filePath)
+		{
+			return File.ReadAllText(filePath);
+		}
+
+		/// <summary>
 		/// extract image file paths from image directory. 
 		/// </summary>
 		/// <param name="directoryPath">path to image directory.</param>
@@ -20,7 +30,7 @@ namespace MediumLib
 		public static List<string> GetImagePaths(string directoryPath)
 		{
 			string[] imagePaths = Directory.GetFiles(directoryPath);
-			return imagePaths.ToList<string>();
+			return imagePaths.ToList();
 		}
 
 		/// <summary>

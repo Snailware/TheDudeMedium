@@ -58,8 +58,8 @@ namespace MediumLib
 		/// <returns>list of nouns.</returns>
 		public static List<string> GetNouns()
 		{
-			const string query = "SELECT word FROM vocabulary WHERE noun = 1;"; // TODO doule check this.
-			List<string> results = QueryDatabase(query);
+			const string Query = "SELECT word FROM vocabulary WHERE noun = 1;";
+			List<string> results = QueryDatabase(Query);
 			return results;
 		}
 
@@ -69,8 +69,8 @@ namespace MediumLib
 		/// <returns>list of pronouns.</returns>
 		public static List<string> GetPronouns()
 		{
-			const string query = "SELECT word FROM vocabulary WHERE pronoun = 1;"; // TODO doule check this.
-			List<string> results = QueryDatabase(query);
+			const string Query = "SELECT word FROM vocabulary WHERE pronoun = 1;";
+			List<string> results = QueryDatabase(Query);
 			return results;
 		}
 
@@ -80,8 +80,8 @@ namespace MediumLib
 		/// <returns>list of verbs.</returns>
 		public static List<string> GetVerbs()
 		{
-			const string query = "SELECT word FROM vocabulary WHERE verb = 1;"; // TODO doule check this.
-			List<string> results = QueryDatabase(query);
+			const string Query = "SELECT word FROM vocabulary WHERE verb = 1;";
+			List<string> results = QueryDatabase(Query);
 			return results;
 		}
 
@@ -91,8 +91,8 @@ namespace MediumLib
 		/// <returns>list of adjectives.</returns>
 		public static List<string> GetAdjectives()
 		{
-			const string query = "SELECT word FROM vocabulary WHERE adjective = 1;"; // TODO doule check this.
-			List<string> results = QueryDatabase(query);
+			const string Query = "SELECT word FROM vocabulary WHERE adjective = 1;";
+			List<string> results = QueryDatabase(Query);
 			return results;
 		}
 
@@ -102,8 +102,8 @@ namespace MediumLib
 		/// <returns>list of adverbs.</returns>
 		public static List<string> GetAdverbs()
 		{
-			const string query = "SELECT word FROM vocabulary WHERE adverb = 1;"; // TODO doule check this.
-			List<string> results = QueryDatabase(query);
+			const string Query = "SELECT word FROM vocabulary WHERE adverb = 1;";
+			List<string> results = QueryDatabase(Query);
 			return results;
 		}
 
@@ -113,8 +113,8 @@ namespace MediumLib
 		/// <returns>list of prepositions.</returns>
 		public static List<string> GetPrepositions()
 		{
-			const string query = "SELECT word FROM vocabulary WHERE preposition = 1;"; // TODO doule check this.
-			List<string> results = QueryDatabase(query);
+			const string Query = "SELECT word FROM vocabulary WHERE preposition = 1;"; // TODO doule check this.
+			List<string> results = QueryDatabase(Query);
 			return results;
 		}
 
@@ -124,8 +124,8 @@ namespace MediumLib
 		/// <returns>list of conjunctions.</returns>
 		public static List<string> GetConjunctions()
 		{
-			const string query = "SELECT word FROM vocabulary WHERE conjunction = 1;"; // TODO doule check this.
-			List<string> results = QueryDatabase(query);
+			const string Query = "SELECT word FROM vocabulary WHERE conjunction = 1;"; // TODO doule check this.
+			List<string> results = QueryDatabase(Query);
 			return results;
 		}
 
@@ -135,8 +135,8 @@ namespace MediumLib
 		/// <returns>list of interjections.</returns>
 		public static List<string> GetInterjections()
 		{
-			const string query = "SELECT word FROM vocabulary WHERE interjection = 1;"; // TODO doule check this.
-			List<string> results = QueryDatabase(query);
+			const string Query = "SELECT word FROM vocabulary WHERE interjection = 1;"; // TODO doule check this.
+			List<string> results = QueryDatabase(Query);
 			return results;
 		}
 
