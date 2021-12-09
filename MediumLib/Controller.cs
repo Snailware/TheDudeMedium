@@ -27,7 +27,6 @@ namespace MediumLib
 				Model.Adverbs = DatabaseOps.GetAdverbs();
 				Model.Prepositions = DatabaseOps.GetPrepositions();
 				Model.Conjunctions = DatabaseOps.GetConjunctions();
-				Model.Interjections = DatabaseOps.GetInterjections();
 				DatabaseOps.CloseConnection();
 				Model.ImagePaths = FileOps.GetImagePaths(Model.ImageDirectoryPath);
 				Model.SentenceStructures = FileOps.GetSentenceStructures(Model.SentenceStructureFilePath);
@@ -94,9 +93,6 @@ namespace MediumLib
 						break;
 					case "conjunction":
 						word = GetString(Model.Conjunctions);
-						break;
-					case "interjection":
-						word = GetString(Model.Interjections);
 						break;
 				}
 				if (!string.IsNullOrWhiteSpace(text))

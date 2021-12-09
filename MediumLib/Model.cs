@@ -18,12 +18,11 @@ namespace MediumLib
 		public static List<string> Adverbs { get; set; }
 		public static List<string> Prepositions { get; set; }
 		public static List<string> Conjunctions { get; set; }
-		public static List<string> Interjections { get; set; }
 		public static List<string> ImagePaths { get; set; }
 		public static List<string> SentenceStructures { get; set; }
 		public static string ConnectionString { get; set; }
-		public static string ImageDirectoryPath { get; } = @"../../../MediumLib/Images";					// TODO add these.
-		public static string SentenceStructureFilePath { get; } = @"../../../MediumLib/SentenceStructures.txt";  //
+		public static string ImageDirectoryPath { get; } = @"../../../MediumLib/Images";
+		public static string SentenceStructureFilePath { get; } = @"../../../MediumLib/SentenceStructures.csv";
 		public static string ConnectionStringFilePath { get; } = @"../../../MediumLib/ConnectionString.txt";
 	}
 }

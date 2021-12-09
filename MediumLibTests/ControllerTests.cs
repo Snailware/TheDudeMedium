@@ -83,10 +83,9 @@ namespace MediumLib.Tests
 				 fifteenFound = false, sixteenFound = false,
 				 seventeenFound = false, eighteenFound = false,
 				 nineteenFound = false, twentyFound = false,
-				 twentyOneFound = false, twentyTwoFound = false,
-				 twentyThreeFound = false, twentyFourFound = false,
-				 capitalized = false, punctuated = false,
-				 shortFound = false, mediumFound = false, longFound = false;
+				 twentyOneFound = false, capitalized = false, 
+				 punctuated = false, shortFound = false, 
+				 mediumFound = false, longFound = false;
 
 			Model.Nouns = new List<string> { "one", "two", "three" };
 			Model.Pronouns = new List<string> { "four", "five", "six" };
@@ -95,11 +94,9 @@ namespace MediumLib.Tests
 			Model.Adverbs = new List<string> { "thirteen", "fourteen", "fifteen" };
 			Model.Prepositions = new List<string> { "sixteen", "seventeen", "eighteen" };
 			Model.Conjunctions = new List<string> { "nineteen", "twenty", "twentyone" };
-			Model.Interjections = new List<string> { "twentytwo", "twentythree", "twentyfour" };
-
-			Model.SentenceStructures = new List<string> { "noun,pronoun,verb,adjective,adverb,preposition,conjunction,interjection",
+			Model.SentenceStructures = new List<string> { "noun,pronoun,verb,adjective,adverb,preposition,conjunction,verb",
 														  "noun,pronoun,verb,adjective,adverb",
-														  "preposition,interjection,conjunction" };
+														  "preposition,conjunction,conjunction" };
 			// arrange.
 
 			for (int index = 0; index < 1000; index++)
@@ -109,7 +106,16 @@ namespace MediumLib.Tests
 				string[] sentenceTokens = sentence.Split(null);
 				foreach (string word in sentenceTokens)
 				{
-					switch (word.ToLower())
+					string unpunctuatedWord = "";
+					foreach (char character in word)
+					{
+						if (!char.IsPunctuation(character))
+						{
+							unpunctuatedWord = $"{unpunctuatedWord}{character}";
+						}
+					}
+
+					switch (unpunctuatedWord.ToLower())
 					{
 						case "one":
 							oneFound = true;
@@ -174,15 +180,6 @@ namespace MediumLib.Tests
 						case "twentyone":
 							twentyOneFound = true;
 							break;
-						case "twentytwo":
-							twentyTwoFound = true;
-							break;
-						case "twentythree":
-							twentyThreeFound = true;
-							break;
-						case "twentyfour":
-							twentyFourFound = true;
-							break;
 					}
 				}
 
@@ -208,16 +205,15 @@ namespace MediumLib.Tests
 						longFound = true;
 						break;
 				}
+
 				if (oneFound && twoFound && threeFound && fourFound &&
 					fiveFound && sixFound && sevenFound && eightFound &&
 					nineFound && tenFound && elevenFound &&
 					twelveFound && thirteenFound && fourteenFound &&
 					fifteenFound && sixteenFound && seventeenFound &&
 					eighteenFound && nineteenFound && twentyFound &&
-					twentyOneFound && twentyTwoFound &&
-					twentyThreeFound && twentyFourFound &&
-					capitalized && punctuated && shortFound &&
-					mediumFound && longFound)
+					twentyOneFound && capitalized && punctuated && 
+					shortFound && mediumFound && longFound)
 				{
 					break;
 				}
@@ -245,9 +241,6 @@ namespace MediumLib.Tests
 							  $"nineteenFound : {nineteenFound}" + Environment.NewLine +
 							  $"twentyFound : {twentyFound}" + Environment.NewLine +
 							  $"twentyOneFound : {twentyOneFound}" + Environment.NewLine +
-							  $"twentyTwoFound : {twentyTwoFound}" + Environment.NewLine +
-							  $"twentyThreeFound : {twentyThreeFound}" + Environment.NewLine +
-							  $"twentyFourFound : {twentyFourFound}" + Environment.NewLine +
 							  $"capitalized : {capitalized}" + Environment.NewLine +
 							  $"punctuated : {punctuated}" + Environment.NewLine +
 							  $"shortFound : {shortFound}" + Environment.NewLine +
@@ -260,10 +253,8 @@ namespace MediumLib.Tests
 						  twelveFound && thirteenFound && fourteenFound &&
 						  fifteenFound && sixteenFound && seventeenFound &&
 						  eighteenFound && nineteenFound && twentyFound &&
-						  twentyOneFound && twentyTwoFound &&
-						  twentyThreeFound && twentyFourFound &&
-						  capitalized && punctuated && shortFound &&
-						  mediumFound && longFound);
+						  twentyOneFound && capitalized && punctuated && 
+						  shortFound && mediumFound && longFound);
 			// assert.
 		}
 	}
