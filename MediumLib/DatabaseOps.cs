@@ -130,17 +130,6 @@ namespace MediumLib
 		}
 
 		/// <summary>
-		/// get interjections from database.
-		/// </summary>
-		/// <returns>list of interjections.</returns>
-		public static List<string> GetInterjections()
-		{
-			const string Query = "SELECT word FROM vocabulary WHERE interjection = 1;"; // TODO doule check this.
-			List<string> results = QueryDatabase(Query);
-			return results;
-		}
-
-		/// <summary>
 		/// execute query on database and return results. can only extract
 		/// 1 column per query.
 		/// </summary>

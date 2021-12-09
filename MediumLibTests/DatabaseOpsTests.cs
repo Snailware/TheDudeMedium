@@ -170,24 +170,5 @@ namespace MediumLib.Tests
 			}
 			// act & assert.
 		}
-
-		[TestMethod()]
-		public void GetInterjectionsTest()
-		{
-			Model.ConnectionString = FileOps.GetConnectionString(Model.ConnectionStringFilePath);
-			// arrange.
-
-			if (DatabaseOps.OpenConnection(Model.ConnectionString))
-			{
-				Model.Interjections = DatabaseOps.GetInterjections();
-				DatabaseOps.CloseConnection();
-				Assert.IsTrue(Model.Interjections.Count > 0);
-			}
-			else
-			{
-				Assert.Fail();
-			}
-			// act & assert.
-		}
 	}
 }
