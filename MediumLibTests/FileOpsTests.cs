@@ -27,7 +27,7 @@ namespace MediumLib.Tests
 			List<string> imagePaths = FileOps.GetImagePaths(Model.ImageDirectoryPath);
 			// arrange & act.
 
-			Assert.IsNotNull(imagePaths);
+			Assert.IsNotNull(imagePaths[0]);
 			// Assert.
 		}
 
@@ -37,7 +37,7 @@ namespace MediumLib.Tests
 			List<string> sentenceStructures = FileOps.GetSentenceStructures(Model.SentenceStructureFilePath);
 			// arrange & assert.
 
-			Assert.IsNotNull(sentenceStructures);
+			Assert.IsNotNull(sentenceStructures[0]);
 			// assert.
 		}
 	}
