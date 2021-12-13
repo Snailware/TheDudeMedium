@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace MediumLib
 {
@@ -15,11 +16,11 @@ namespace MediumLib
 		/// class for prophecies.
 		/// </summary>
 		/// <param name="text">text of prophecy.</param>
-		/// <param name="imagePath">path to prophecy image.</param>
-		public Prophecy(string text, string imagePath)
+		/// <param name="imagePath">image of prophecy.</param>
+		public Prophecy(string text, BitmapImage image)
 		{
 			Text = text;
-			ImagePath = imagePath;
+			Image = image;
 		}
 
 		/// <summary>
@@ -28,8 +29,8 @@ namespace MediumLib
 		public string Text { get; }
 
 		/// <summary>
-		/// path to prophecy image.
+		/// image of prophecy.
 		/// </summary>
-		public string ImagePath { get; }
+		public BitmapImage Image { get; }
 	}
 }
