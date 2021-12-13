@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace MediumLib
 {
@@ -45,9 +46,9 @@ namespace MediumLib
 		public static Prophecy CreateProphecy()
 		{
 			string sentenceStructure = GetString(Model.SentenceStructures);
-			string text = GetSentence(sentenceStructure);
 			string imagePath = GetString(Model.ImagePaths);
-			return new Prophecy(text, imagePath);
+			return new Prophecy(text: GetSentence(sentenceStructure),
+								image: ImageOps.CreateBitmapImage(imagePath));
 		}
 
 		/// <summary>

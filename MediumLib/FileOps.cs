@@ -29,8 +29,12 @@ namespace MediumLib
 		/// <returns>list of all image paths found.</returns>
 		public static List<string> GetImagePaths(string directoryPath)
 		{
-			string[] imagePaths = Directory.GetFiles(directoryPath);
-			return imagePaths.ToList();
+			List<string> imagePaths = new List<string>();
+			foreach(string path in Directory.GetFiles(directoryPath))
+			{
+				imagePaths.Add(Path.GetFullPath(path));
+			}
+			return imagePaths;
 		}
 
 		/// <summary>
@@ -41,7 +45,7 @@ namespace MediumLib
 		public static List<string> GetSentenceStructures(string filePath)
 		{
 			string[] structs = File.ReadAllLines(filePath);
-			return structs.ToList<string>();
+			return structs.ToList();
 		}
 	}
 }
