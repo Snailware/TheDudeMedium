@@ -61,6 +61,7 @@
     <Compile Include="DatabaseOps.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="FileOps.cs" />
+    <Compile Include="ImageOps.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Prophecy.cs" />

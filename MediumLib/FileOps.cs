@@ -45,7 +45,7 @@ namespace MediumLib
 		public static List<string> GetSentenceStructures(string filePath)
 		{
 			string[] structs = File.ReadAllLines(filePath);
-			return structs.ToList<string>();
+			return structs.ToList();
 		}
 	}
 }

@@ -24,7 +24,11 @@ namespace WpfUI
 		public MainWindow()
 		{
 			InitializeComponent();
-			if (!Controller.Setup())
+			if (Controller.Setup())
+			{
+				DisplayProphecy(Controller.CreateProphecy());
+			}
+			else
 			{
 				MessageBox.Show("An error occurred during setup. Closing program.");
 				Close();
@@ -39,10 +43,6 @@ namespace WpfUI
 		private void GetProphecyButton_Click(object sender, RoutedEventArgs e)
 		{
 			DisplayProphecy(Controller.CreateProphecy());
-
-			TextOutput.Text = prophecy.Text;
-			BitmapImage image = new BitmapImage(new Uri(prophecy.ImagePath, UriKind.RelativeOrAbsolute));
-			MainGrid.Background = new ImageBrush(image);
 		}
 
 		/// <summary>
@@ -62,7 +62,7 @@ namespace WpfUI
 		private void DisplayProphecy(Prophecy prophecy)
 		{
 			TextOutput.Text = prophecy.Text;
-			MainGrid.Background = prophecy.Image;
+			MainGrid.Background = new ImageBrush(prophecy.Image);
 		}
 	}
 }

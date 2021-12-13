@@ -16,7 +16,7 @@ namespace MediumLib
 		/// class for prophecies.
 		/// </summary>
 		/// <param name="text">text of prophecy.</param>
-		/// <param name="imagePath">image of prophecy.</param>
+		/// <param name="image">image of prophecy.</param>
 		public Prophecy(string text, BitmapImage image)
 		{
 			Text = text;
