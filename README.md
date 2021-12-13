@@ -5,8 +5,6 @@ Get prophecies & visions from **The Dude** himself, main character of
 
 ## Setup
 
----
-
 1. **[Download](https://github.com/Snailware/TheDudeMedium/archive/refs/heads/master.zip)**
 or clone code from
 **[Github](https://github.com/Snailware/TheDudeMedium)**.
@@ -27,8 +25,6 @@ database.
 6. Start solution! *If errors occur, rebuild the solution and try again*.
 
 ## Inspiration
-
----
 
 This program was loosely inspired by the oracle program in Temple OS, created
 by Terry Davis. Please consider donating to a local charity for those suffering with
