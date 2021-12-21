@@ -170,5 +170,11 @@ namespace MediumLib.Tests
 			}
 			// act & assert.
 		}
+
+		[TestMethod()]
+		public void GetSentenceStructuresTest()
+		{
+			Assert.Fail();
+		}
 	}
 }

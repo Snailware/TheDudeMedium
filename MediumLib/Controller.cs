@@ -13,12 +13,11 @@ namespace MediumLib
 	public static class Controller
 	{
 		/// <summary>
-		/// get words & image paths from database and fill model.
+		/// get words & sentence structs from database and fill model.
 		/// </summary>
 		/// <returns>true if successful. otherwise false.</returns>
 		public static bool Setup()
 		{
-			Model.ConnectionString = FileOps.GetConnectionString(Model.ConnectionStringFilePath);
 			if (DatabaseOps.OpenConnection(Model.ConnectionString))
 			{
 				Model.Nouns = DatabaseOps.GetNouns();
@@ -28,9 +27,11 @@ namespace MediumLib
 				Model.Adverbs = DatabaseOps.GetAdverbs();
 				Model.Prepositions = DatabaseOps.GetPrepositions();
 				Model.Conjunctions = DatabaseOps.GetConjunctions();
+				Model.SentenceStructures = DatabaseOps.GetSentenceStructures();
 				DatabaseOps.CloseConnection();
-				Model.ImagePaths = FileOps.GetImagePaths(Model.ImageDirectoryPath);
-				Model.SentenceStructures = FileOps.GetSentenceStructures(Model.SentenceStructureFilePath);
+				Model.CurrentProphecy = CreateProphecy();
+				Model.QueuedProphecy = CreateProphecy();
+
 				return true;
 			}
 			else

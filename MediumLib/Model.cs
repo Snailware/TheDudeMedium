@@ -11,6 +11,7 @@ namespace MediumLib
 	/// </summary>
 	public static class Model
 	{
+		public static string ConnectionString { get; } = @""; // TODO fill this.
 		public static List<string> Nouns { get; set; }
 		public static List<string> Pronouns { get; set; }
 		public static List<string> Verbs { get; set; }
@@ -20,9 +21,10 @@ namespace MediumLib
 		public static List<string> Conjunctions { get; set; }
 		public static List<string> ImagePaths { get; set; }
 		public static List<string> SentenceStructures { get; set; }
-		public static string ConnectionString { get; set; }
-		public static string ImageDirectoryPath { get; } = @"../../../MediumLib/Images";
-		public static string SentenceStructureFilePath { get; } = @"../../../MediumLib/SentenceStructures.csv";
-		public static string ConnectionStringFilePath { get; } = @"../../../MediumLib/ConnectionString.txt";
+		public static Prophecy CurrentProphecy { get; set; }
+		public static Prophecy QueuedProphecy { get; set; }
+		//public static string ImageDirectoryPath { get; } = @"../../../MediumLib/Images";
+		//public static string SentenceStructureFilePath { get; } = @"../../../MediumLib/SentenceStructures.csv";
+		//public static string ConnectionStringFilePath { get; } = @"../../../MediumLib/ConnectionString.txt";
 	}
 }
