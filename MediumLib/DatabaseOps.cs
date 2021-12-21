@@ -113,7 +113,7 @@ namespace MediumLib
 		/// <returns>list of prepositions.</returns>
 		public static List<string> GetPrepositions()
 		{
-			const string Query = "SELECT word FROM vocabulary WHERE preposition = 1;"; // TODO doule check this.
+			const string Query = "SELECT word FROM vocabulary WHERE preposition = 1;";
 			List<string> results = QueryDatabase(Query);
 			return results;
 		}
@@ -124,7 +124,7 @@ namespace MediumLib
 		/// <returns>list of conjunctions.</returns>
 		public static List<string> GetConjunctions()
 		{
-			const string Query = "SELECT word FROM vocabulary WHERE conjunction = 1;"; // TODO doule check this.
+			const string Query = "SELECT word FROM vocabulary WHERE conjunction = 1;";
 			List<string> results = QueryDatabase(Query);
 			return results;
 		}
