@@ -29,9 +29,11 @@ namespace MediumLib
 				Model.Conjunctions = DatabaseOps.GetConjunctions();
 				Model.SentenceStructures = DatabaseOps.GetSentenceStructures();
 				DatabaseOps.CloseConnection();
-				Model.CurrentProphecy = CreateProphecy();
-				Model.QueuedProphecy = CreateProphecy();
-
+				Model.ImagePaths = FileOps.GetImagePaths(Model.ImageDirectoryPath);
+				for (int index = 0; index < 2; index++)
+				{
+					Model.ProphecyQueue.Enqueue(CreateNewProphecy());
+				}
 				return true;
 			}
 			else
@@ -41,15 +43,42 @@ namespace MediumLib
 		}
 
 		/// <summary>
+		/// get prophecy from queue.
+		/// </summary>
+		/// <returns>Prophecy obj.</returns>
+		public static Prophecy GetProphecy()
+		{
+			return Model.ProphecyQueue.Dequeue();
+		}
+
+		/// <summary>
+		/// update queue by enqueueing one prophecy.
+		/// </summary>
+		/// <returns>true if successful, false otherwise.</returns>
+		public static bool UpdateQueue()
+		{
+			try
+			{
+				Model.ProphecyQueue.Enqueue(CreateNewProphecy());
+				return true;
+			}
+			catch
+			{
+				return false;
+			}
+			
+		}
+
+		/// <summary>
 		/// create prophecy randomly using model data. 
 		/// </summary>
 		/// <returns>randomly generated Prophecy obj.</returns>
-		public static Prophecy CreateProphecy()
+		public static Prophecy CreateNewProphecy()
 		{
 			string sentenceStructure = GetString(Model.SentenceStructures);
-			string imagePath = GetString(Model.ImagePaths);
-			return new Prophecy(text: GetSentence(sentenceStructure),
-								image: ImageOps.CreateBitmapImage(imagePath));
+			string sentence = GetSentence(sentenceStructure);
+			BitmapImage image = ImageOps.CreateBitmapImage(GetString(Model.ImagePaths));
+			return new Prophecy(text: sentence, image: image);
 		}
 
 		/// <summary>

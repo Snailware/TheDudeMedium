@@ -26,7 +26,8 @@ namespace WpfUI
 			InitializeComponent();
 			if (Controller.Setup())
 			{
-				DisplayProphecy(Controller.CreateProphecy());
+				DisplayProphecy(Controller.GetProphecy());
+
 			}
 			else
 			{
@@ -42,7 +43,7 @@ namespace WpfUI
 		/// <param name="e"></param>
 		private void GetProphecyButton_Click(object sender, RoutedEventArgs e)
 		{
-			DisplayProphecy(Controller.CreateProphecy());
+			DisplayProphecy(Controller.GetProphecy());
 		}
 
 		/// <summary>
@@ -63,6 +64,7 @@ namespace WpfUI
 		{
 			TextOutput.Text = prophecy.Text;
 			MainGrid.Background = new ImageBrush(prophecy.Image);
+			Controller.UpdateQueue();
 		}
 	}
 }
