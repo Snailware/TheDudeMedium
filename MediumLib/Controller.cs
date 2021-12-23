@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
+using System.IO;
 
 namespace MediumLib
 {
@@ -18,7 +19,7 @@ namespace MediumLib
 		/// <returns>true if successful. otherwise false.</returns>
 		public static bool Setup()
 		{
-			if (DatabaseOps.OpenConnection(Model.ConnectionString))
+			if (DatabaseOps.OpenConnection(Model.DatabasePath))
 			{
 				Model.Nouns = DatabaseOps.GetNouns();
 				Model.Pronouns = DatabaseOps.GetPronouns();
@@ -30,7 +31,7 @@ namespace MediumLib
 				Model.SentenceStructures = DatabaseOps.GetSentenceStructures();
 				DatabaseOps.CloseConnection();
 				Model.ImagePaths = FileOps.GetImagePaths(Model.ImageDirectoryPath);
-				for (int index = 0; index < 2; index++)
+				for (int index = 0; index < 6; index++)
 				{
 					Model.ProphecyQueue.Enqueue(CreateNewProphecy());
 				}
@@ -55,18 +56,9 @@ namespace MediumLib
 		/// update queue by enqueueing one prophecy.
 		/// </summary>
 		/// <returns>true if successful, false otherwise.</returns>
-		public static bool UpdateQueue()
+		public static void UpdateQueue()
 		{
-			try
-			{
-				Model.ProphecyQueue.Enqueue(CreateNewProphecy());
-				return true;
-			}
-			catch
-			{
-				return false;
-			}
-			
+			Model.ProphecyQueue.Enqueue(CreateNewProphecy());
 		}
 
 		/// <summary>
@@ -134,6 +126,10 @@ namespace MediumLib
 				{
 					text = word.Capitalize();
 				}
+			}
+			if (text[text.Length - 1] == ' ')
+			{
+				text = text.Remove(text.Length - 1, 1);
 			}
 			return text += ".";
 		}

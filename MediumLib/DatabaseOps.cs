@@ -1,34 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
+using System.Data;
+using System.IO;
 
 namespace MediumLib
 {
 	/// <summary>
-	/// class for operating on database.
+	/// sqlite database class.
 	/// </summary>
 	public static class DatabaseOps
 	{
-
-
 		/// <summary>
 		/// open connection to database.
 		/// </summary>
-		/// <param name="connectionString">connection string to use for connection.</param>
+		/// <param name="databasePath">path to database, used for creating
+		/// connection string.</param>
 		/// <returns>true if successful. false otherwise.</returns>
-		public static bool OpenConnection(string connectionString)
+		public static bool OpenConnection(string databasePath)
 		{
-			try
+			string connectionString = $"Data Source={Path.GetFullPath(databasePath)}";
+			Connection = new SQLiteConnection(connectionString);
+			Connection.Open();
+
+			if (Connection.State is ConnectionState.Open)
 			{
-				Connection = new SQLiteConnection(connectionString);
-				Connection.Open();
 				return true;
 			}
-			catch (Exception)
+			else
 			{
 				return false;
 			}
@@ -40,12 +42,19 @@ namespace MediumLib
 		/// <returns>true if successful. false otherwise.</returns>
 		public static bool CloseConnection()
 		{
-			try
+			if (Connection.State is ConnectionState.Open)
 			{
 				Connection.Close();
-				return true;
+				if (Connection.State is ConnectionState.Closed)
+				{
+					return true;
+				} 
+				else
+				{
+					return false;
+				}
 			}
-			catch(Exception)
+			else
 			{
 				return false;
 			}

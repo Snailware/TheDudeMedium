@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace MediumLib
 {
@@ -11,7 +12,7 @@ namespace MediumLib
 	/// </summary>
 	public static class Model
 	{
-		public static string ConnectionString { get; } = @""; // TODO fill this
+		public static string DatabasePath { get; } = @"../../../MediumLib/Medium.db";
 		public static string ImageDirectoryPath { get; } = @"../../../MediumLib/Images";
 		public static Queue<Prophecy> ProphecyQueue { get; } = new Queue<Prophecy>();
 		public static List<string> Nouns { get; set; }

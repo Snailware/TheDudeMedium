@@ -547,13 +547,6 @@
     <Content Include="Images\97.png" />
     <Content Include="Images\98.png" />
     <Content Include="Images\99.png" />
-    <Content Include="MediumDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="MediumDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>MediumDB.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -570,8 +563,8 @@
   <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Medium.db" />
     <None Include="packages.config" />
-    <None Include="SentenceStructures.csv" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
