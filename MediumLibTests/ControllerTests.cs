@@ -261,13 +261,43 @@ namespace MediumLib.Tests
 		[TestMethod()]
 		public void GetProphecyTest()
 		{
-			Assert.Fail();
+			if (Controller.Setup())
+			{
+				int expected = Model.ProphecyQueue.Count - 3;
+				Prophecy prophecy1 = Controller.GetProphecy();
+				Prophecy prophecy2 = Controller.GetProphecy();
+				Prophecy prophecy3 = Controller.GetProphecy();
+				int actual = Model.ProphecyQueue.Count;
+				if (prophecy1 != prophecy2 &&
+					prophecy2 != prophecy3)
+				{
+					Assert.AreEqual(expected, actual);
+				}
+				else
+				{
+					Assert.Fail();
+				}
+			}
+			else
+			{
+				Assert.Fail();
+			}
 		}
 
 		[TestMethod()]
 		public void UpdateQueueTest()
 		{
-			Assert.Fail();
+			if (Controller.Setup())
+			{
+				int expected = Model.ProphecyQueue.Count + 1;
+				Controller.UpdateQueue();
+				int actual = Model.ProphecyQueue.Count;
+				Assert.AreEqual(expected, actual);
+			}
+			else
+			{
+				Assert.Fail();
+			}
 		}
 	}
 }
