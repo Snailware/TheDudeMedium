@@ -67,9 +67,10 @@
 
 ## About The Project
 
-<!--![The Dude Medium](images/screenshot.png)-->
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Snailware/TheDudeMedium/master/MediumLib/Images/247.png" alt="screenshot" width="80%" height="auto">
+  <a href="https://github.com/Snailware/TheDudeMedium">
+    <img src="images/screenshot.png" alt="screenshot" width="80%" height="auto">
+  </a>
 </div>
 </br>
 
@@ -187,5 +188,3 @@ Project Link: [https://github.com/Snailware/TheDudeMedium](https://github.com/Sn
 [issues-url]: https://github.com/Snailware/TheDudeMedium/issues
 [license-url]: https://github.com/Snailware/TheDudeMedium/blob/master/LICENSE
 -->
-
-[product-screenshot]: images/screenshot.png
