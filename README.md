@@ -7,8 +7,6 @@
 *** Thanks again! Now go create something AMAZING! :D
 -->
 
-
-
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -17,7 +15,6 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-
 
 <!-- PROJECT LOGO -->
 <br />
@@ -39,8 +36,6 @@
     <a href="https://github.com/Snailware/TheDudeMedium/issues">Request Feature</a>
   </p>
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -68,14 +63,13 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 <!--![The Dude Medium](images/screenshot.png)-->
 <div align="center">
-  <img align ="center" src="https://raw.githubusercontent.com/Snailware/TheDudeMedium/master/MediumLib/Images/247.png" alt="screenshot" width="75%" height="auto">
+  <img src="https://raw.githubusercontent.com/Snailware/TheDudeMedium/master/MediumLib/Images/247.png" alt="screenshot" width="80%" height="auto">
 </div>
 </br>
 
@@ -83,19 +77,16 @@
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 ### Built With
 
-* [.NET Framework](https://dotnet.microsoft.com/en-us/download/dotnet-framework)
-* [Windows Presentation Foundation](https://docs.microsoft.com/en-us/visualstudio/designers/getting-started-with-wpf?view=vs-2019)
-* [SQLite](https://www.sqlite.org/index.html)
+-   [.NET Framework](https://dotnet.microsoft.com/en-us/download/dotnet-framework)
+-   [Windows Presentation Foundation](https://docs.microsoft.com/en-us/visualstudio/designers/getting-started-with-wpf?view=vs-2019)
+-   [SQLite](https://www.sqlite.org/index.html)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
@@ -104,49 +95,47 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+
+-   npm
+    ```sh
+    npm install npm@latest -g
+    ```
 
 ### Installation
 
 1. Clone the repo
-   ```sh
-   git clone https://github.com/Snailware/TheDudeMedium.git
-   ```
+    ```sh
+    git clone https://github.com/Snailware/TheDudeMedium.git
+    ```
 2. Install NPM packages
-   ```sh
-   npm install
-   ```
+    ```sh
+    npm install
+    ```
 3. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+    ```js
+    const API_KEY = "ENTER YOUR API";
+    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- USAGE EXAMPLES -->
+
 ## Usage
 
-Start the program and click the `button_text` button in the bottom left corner to get a prophecy. Repeat as desired. Click the `button_text` button in the bottom right corner when finished to close the program.
+Start the program and click the `Get Prophecy` button in the bottom left corner to get a prophecy. Repeat as desired. Click the `Close` button in the bottom right corner when finished to close the program.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- ROADMAP -->
+
 ## Roadmap
 
 See the [open issues](https://github.com/Snailware/TheDudeMedium/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- CONTRIBUTING -->
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -162,18 +151,16 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- LICENSE -->
+
 ## License
 
 Distributed under the GNU-3.0 License. See [LICENSE](https://github.com/Snailware/TheDudeMedium/blob/master/LICENSE) for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- CONTACT -->
+
 ## Contact
 
 <!--Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com -->
@@ -182,17 +169,14 @@ Project Link: [https://github.com/Snailware/TheDudeMedium](https://github.com/Sn
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- ACKNOWLEDGMENTS -->
+
 ## Acknowledgments
 
-* [Terry Davis](https://en.wikipedia.org/wiki/Terry_A._Davis) - This program is loosely based on the oracle program in [TempleOS](https://templeos.org/). *Rest in peace, Terry.*
-* [Adam Ralph](https://github.com/adamralph) - `icon.png` copied from [adamralph/dude](https://github.com/adamralph/dude).
+-   [Terry Davis](https://en.wikipedia.org/wiki/Terry_A._Davis) - This program is loosely based on the oracle program in [TempleOS](https://templeos.org/). _Rest in peace, Terry._
+-   [Adam Ralph](https://github.com/adamralph) - `icon.png` copied from [adamralph/dude](https://github.com/adamralph/dude).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
@@ -203,4 +187,5 @@ Project Link: [https://github.com/Snailware/TheDudeMedium](https://github.com/Sn
 [issues-url]: https://github.com/Snailware/TheDudeMedium/issues
 [license-url]: https://github.com/Snailware/TheDudeMedium/blob/master/LICENSE
 -->
+
 [product-screenshot]: images/screenshot.png
