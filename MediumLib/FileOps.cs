@@ -17,10 +17,11 @@ namespace MediumLib
 		/// </summary>
 		/// <param name="filePath">path to connection string file.</param>
 		/// <returns>connection string.</returns>
-		public static string GetConnectionString(string filePath)
-		{
-			return File.ReadAllText(filePath);
-		}
+		//public static string GetConnectionString(string filePath)
+		//{
+		//	return File.ReadAllText(filePath);
+		//}
+		// TODO delete this
 
 		/// <summary>
 		/// extract image file paths from image directory. 
@@ -42,10 +43,11 @@ namespace MediumLib
 		/// </summary>
 		/// <param name="filePath">path to sentence structure file.</param>
 		/// <returns>list of all sentence structures.</returns>
-		public static List<string> GetSentenceStructures(string filePath)
-		{
-			string[] structs = File.ReadAllLines(filePath);
-			return structs.ToList();
-		}
+		//public static List<string> GetSentenceStructures(string filePath)
+		//{
+		//	string[] structs = File.ReadAllLines(filePath);
+		//	return structs.ToList();
+		//}
+		// TODO delete this
 	}
 }
