@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
+using System.IO;
 
 namespace MediumLib
 {
@@ -13,13 +14,12 @@ namespace MediumLib
 	public static class Controller
 	{
 		/// <summary>
-		/// get words & image paths from database and fill model.
+		/// get words & sentence structs from database and fill model.
 		/// </summary>
 		/// <returns>true if successful. otherwise false.</returns>
 		public static bool Setup()
 		{
-			Model.ConnectionString = FileOps.GetConnectionString(Model.ConnectionStringFilePath);
-			if (DatabaseOps.OpenConnection(Model.ConnectionString))
+			if (DatabaseOps.OpenConnection(Model.DatabasePath))
 			{
 				Model.Nouns = DatabaseOps.GetNouns();
 				Model.Pronouns = DatabaseOps.GetPronouns();
@@ -28,9 +28,13 @@ namespace MediumLib
 				Model.Adverbs = DatabaseOps.GetAdverbs();
 				Model.Prepositions = DatabaseOps.GetPrepositions();
 				Model.Conjunctions = DatabaseOps.GetConjunctions();
+				Model.SentenceStructures = DatabaseOps.GetSentenceStructures();
 				DatabaseOps.CloseConnection();
 				Model.ImagePaths = FileOps.GetImagePaths(Model.ImageDirectoryPath);
-				Model.SentenceStructures = FileOps.GetSentenceStructures(Model.SentenceStructureFilePath);
+				for (int index = 0; index < 6; index++)
+				{
+					Model.ProphecyQueue.Enqueue(CreateNewProphecy());
+				}
 				return true;
 			}
 			else
@@ -40,15 +44,33 @@ namespace MediumLib
 		}
 
 		/// <summary>
+		/// get prophecy from queue.
+		/// </summary>
+		/// <returns>Prophecy obj.</returns>
+		public static Prophecy GetProphecy()
+		{
+			return Model.ProphecyQueue.Dequeue();
+		}
+
+		/// <summary>
+		/// update queue by enqueueing one prophecy.
+		/// </summary>
+		/// <returns>true if successful, false otherwise.</returns>
+		public static void UpdateQueue()
+		{
+			Model.ProphecyQueue.Enqueue(CreateNewProphecy());
+		}
+
+		/// <summary>
 		/// create prophecy randomly using model data. 
 		/// </summary>
 		/// <returns>randomly generated Prophecy obj.</returns>
-		public static Prophecy CreateProphecy()
+		public static Prophecy CreateNewProphecy()
 		{
 			string sentenceStructure = GetString(Model.SentenceStructures);
-			string imagePath = GetString(Model.ImagePaths);
-			return new Prophecy(text: GetSentence(sentenceStructure),
-								image: ImageOps.CreateBitmapImage(imagePath));
+			string sentence = GetSentence(sentenceStructure);
+			BitmapImage image = ImageOps.CreateBitmapImage(GetString(Model.ImagePaths));
+			return new Prophecy(text: sentence, image: image);
 		}
 
 		/// <summary>
@@ -104,6 +126,10 @@ namespace MediumLib
 				{
 					text = word.Capitalize();
 				}
+			}
+			if (text[text.Length - 1] == ' ')
+			{
+				text = text.Remove(text.Length - 1, 1);
 			}
 			return text += ".";
 		}

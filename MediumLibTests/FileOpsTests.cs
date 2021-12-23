@@ -12,16 +12,6 @@ namespace MediumLib.Tests
 	public class FileOpsTests
 	{
 		[TestMethod()]
-		public void GetConnectionStringTest()
-		{
-			string connectionString = FileOps.GetConnectionString(Model.ConnectionStringFilePath);
-			// arrange & act.
-
-			Assert.IsNotNull(connectionString);
-			// assert.
-		}
-
-		[TestMethod()]
 		public void GetImagePathsTest()
 		{
 			List<string> imagePaths = FileOps.GetImagePaths(Model.ImageDirectoryPath);
@@ -29,16 +19,6 @@ namespace MediumLib.Tests
 
 			Assert.IsNotNull(imagePaths[0]);
 			// Assert.
-		}
-
-		[TestMethod()]
-		public void GetSentenceStructuresTest()
-		{
-			List<string> sentenceStructures = FileOps.GetSentenceStructures(Model.SentenceStructureFilePath);
-			// arrange & assert.
-
-			Assert.IsNotNull(sentenceStructures[0]);
-			// assert.
 		}
 	}
 }

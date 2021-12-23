@@ -1,38 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SQLite;
+using System.Data;
+using System.IO;
 
 namespace MediumLib
 {
 	/// <summary>
-	/// class for operating on database.
+	/// sqlite database class.
 	/// </summary>
 	public static class DatabaseOps
 	{
 		/// <summary>
 		/// open connection to database.
 		/// </summary>
-		/// <param name="connectionString">connection string to use for connection.</param>
+		/// <param name="databasePath">path to database, used for creating
+		/// connection string.</param>
 		/// <returns>true if successful. false otherwise.</returns>
-		public static bool OpenConnection(string connectionString)
+		public static bool OpenConnection(string databasePath)
 		{
-			try
-			{
-				Connection = new SqlConnection(connectionString);
-				// create connection using connection string.
-
-				Connection.Open();
-				// open database connection.
-
-				return true;
-			}
-			catch (Exception)
-			{
-				return false;
-			}
+			string connectionString = $"Data Source={Path.GetFullPath(databasePath)}";
+			Connection = new SQLiteConnection(connectionString);
+			Connection.Open();
+			return Connection.State is ConnectionState.Open;
 		}
 
 		/// <summary>
@@ -41,15 +34,24 @@ namespace MediumLib
 		/// <returns>true if successful. false otherwise.</returns>
 		public static bool CloseConnection()
 		{
-			try
+			if (Connection.State is ConnectionState.Open)
 			{
 				Connection.Close();
-				return true;
+				return Connection.State is ConnectionState.Closed;
 			}
-			catch(Exception)
+			else
 			{
 				return false;
 			}
+		}
+
+		/// <summary>
+		/// get sentence structures from database.
+		/// </summary>
+		/// <returns>list of sentence structures.</returns>
+		public static List<string> GetSentenceStructures()
+		{
+			return QueryDatabase("SELECT structure FROM sentenceStructures;");
 		}
 
 		/// <summary>
@@ -58,9 +60,7 @@ namespace MediumLib
 		/// <returns>list of nouns.</returns>
 		public static List<string> GetNouns()
 		{
-			const string Query = "SELECT word FROM vocabulary WHERE noun = 1;";
-			List<string> results = QueryDatabase(Query);
-			return results;
+			return QueryDatabase("SELECT word FROM vocabulary WHERE noun = 1;");
 		}
 
 		/// <summary>
@@ -69,9 +69,7 @@ namespace MediumLib
 		/// <returns>list of pronouns.</returns>
 		public static List<string> GetPronouns()
 		{
-			const string Query = "SELECT word FROM vocabulary WHERE pronoun = 1;";
-			List<string> results = QueryDatabase(Query);
-			return results;
+			return QueryDatabase("SELECT word FROM vocabulary WHERE pronoun = 1;");
 		}
 
 		/// <summary>
@@ -80,9 +78,7 @@ namespace MediumLib
 		/// <returns>list of verbs.</returns>
 		public static List<string> GetVerbs()
 		{
-			const string Query = "SELECT word FROM vocabulary WHERE verb = 1;";
-			List<string> results = QueryDatabase(Query);
-			return results;
+			return QueryDatabase("SELECT word FROM vocabulary WHERE verb = 1;");
 		}
 
 		/// <summary>
@@ -91,9 +87,7 @@ namespace MediumLib
 		/// <returns>list of adjectives.</returns>
 		public static List<string> GetAdjectives()
 		{
-			const string Query = "SELECT word FROM vocabulary WHERE adjective = 1;";
-			List<string> results = QueryDatabase(Query);
-			return results;
+			return QueryDatabase("SELECT word FROM vocabulary WHERE adjective = 1;");
 		}
 
 		/// <summary>
@@ -102,9 +96,7 @@ namespace MediumLib
 		/// <returns>list of adverbs.</returns>
 		public static List<string> GetAdverbs()
 		{
-			const string Query = "SELECT word FROM vocabulary WHERE adverb = 1;";
-			List<string> results = QueryDatabase(Query);
-			return results;
+			return QueryDatabase("SELECT word FROM vocabulary WHERE adverb = 1;");
 		}
 
 		/// <summary>
@@ -113,9 +105,7 @@ namespace MediumLib
 		/// <returns>list of prepositions.</returns>
 		public static List<string> GetPrepositions()
 		{
-			const string Query = "SELECT word FROM vocabulary WHERE preposition = 1;";
-			List<string> results = QueryDatabase(Query);
-			return results;
+			return QueryDatabase("SELECT word FROM vocabulary WHERE preposition = 1;");
 		}
 
 		/// <summary>
@@ -124,9 +114,7 @@ namespace MediumLib
 		/// <returns>list of conjunctions.</returns>
 		public static List<string> GetConjunctions()
 		{
-			const string Query = "SELECT word FROM vocabulary WHERE conjunction = 1;";
-			List<string> results = QueryDatabase(Query);
-			return results;
+			return QueryDatabase("SELECT word FROM vocabulary WHERE conjunction = 1;");
 		}
 
 		/// <summary>
@@ -140,11 +128,11 @@ namespace MediumLib
 			List<string> output = new List<string>();
 			// list to hold resulting objects.
 
-			SqlCommand command = new SqlCommand(query, Connection);
-			// create command object.
+			SQLiteCommand command = new SQLiteCommand(query, Connection);
+			// create command obj.
 
-			SqlDataReader dataReader = command.ExecuteReader();
-			// execute command & create reader obj.
+			SQLiteDataReader dataReader = command.ExecuteReader();
+			// execute command and create reader obj.
 
 			while (dataReader.Read())
 			{
@@ -163,6 +151,6 @@ namespace MediumLib
 		/// <summary>
 		/// sql connection obj to be used in queries.
 		/// </summary>
-		private static SqlConnection Connection { get; set; }
+		private static SQLiteConnection Connection { get; set; }
 	}
 }

@@ -14,20 +14,14 @@ namespace MediumLib.Tests
 		[TestMethod()]
 		public void OpenConnectionTest()
 		{
-			Model.ConnectionString = FileOps.GetConnectionString(Model.ConnectionStringFilePath);
-			// arrange.
-
-			Assert.IsTrue(DatabaseOps.OpenConnection(Model.ConnectionString));
+			Assert.IsTrue(DatabaseOps.OpenConnection(Model.DatabasePath));
 			// act & assert.
 		}
 
 		[TestMethod()]
 		public void CloseConnectionTest()
 		{
-			Model.ConnectionString = FileOps.GetConnectionString(Model.ConnectionStringFilePath);
-			// arrange.
-
-			if (DatabaseOps.OpenConnection(Model.ConnectionString))
+			if (DatabaseOps.OpenConnection(Model.DatabasePath))
 			{
 				Assert.IsTrue(DatabaseOps.CloseConnection());
 			}
@@ -41,10 +35,7 @@ namespace MediumLib.Tests
 		[TestMethod()]
 		public void GetNounsTest()
 		{
-			Model.ConnectionString = FileOps.GetConnectionString(Model.ConnectionStringFilePath);
-			// arrange.
-
-			if (DatabaseOps.OpenConnection(Model.ConnectionString))
+			if (DatabaseOps.OpenConnection(Model.DatabasePath))
 			{
 				Model.Nouns = DatabaseOps.GetNouns();
 				DatabaseOps.CloseConnection();
@@ -60,10 +51,7 @@ namespace MediumLib.Tests
 		[TestMethod()]
 		public void GetPronounsTest()
 		{
-			Model.ConnectionString = FileOps.GetConnectionString(Model.ConnectionStringFilePath);
-			// arrange.
-
-			if (DatabaseOps.OpenConnection(Model.ConnectionString))
+			if (DatabaseOps.OpenConnection(Model.DatabasePath))
 			{
 				Model.Pronouns = DatabaseOps.GetPronouns();
 				DatabaseOps.CloseConnection();
@@ -79,10 +67,7 @@ namespace MediumLib.Tests
 		[TestMethod()]
 		public void GetVerbsTest()
 		{
-			Model.ConnectionString = FileOps.GetConnectionString(Model.ConnectionStringFilePath);
-			// arrange.
-
-			if (DatabaseOps.OpenConnection(Model.ConnectionString))
+			if (DatabaseOps.OpenConnection(Model.DatabasePath))
 			{
 				Model.Verbs = DatabaseOps.GetVerbs();
 				DatabaseOps.CloseConnection();
@@ -98,10 +83,7 @@ namespace MediumLib.Tests
 		[TestMethod()]
 		public void GetAdjectivesTest()
 		{
-			Model.ConnectionString = FileOps.GetConnectionString(Model.ConnectionStringFilePath);
-			// arrange.
-
-			if (DatabaseOps.OpenConnection(Model.ConnectionString))
+			if (DatabaseOps.OpenConnection(Model.DatabasePath))
 			{
 				Model.Adjectives = DatabaseOps.GetAdjectives();
 				DatabaseOps.CloseConnection();
@@ -117,10 +99,7 @@ namespace MediumLib.Tests
 		[TestMethod()]
 		public void GetAdverbsTest()
 		{
-			Model.ConnectionString = FileOps.GetConnectionString(Model.ConnectionStringFilePath);
-			// arrange.
-
-			if (DatabaseOps.OpenConnection(Model.ConnectionString))
+			if (DatabaseOps.OpenConnection(Model.DatabasePath))
 			{
 				Model.Adverbs = DatabaseOps.GetAdverbs();
 				DatabaseOps.CloseConnection();
@@ -136,10 +115,7 @@ namespace MediumLib.Tests
 		[TestMethod()]
 		public void GetPrepositionsTest()
 		{
-			Model.ConnectionString = FileOps.GetConnectionString(Model.ConnectionStringFilePath);
-			// arrange.
-
-			if (DatabaseOps.OpenConnection(Model.ConnectionString))
+			if (DatabaseOps.OpenConnection(Model.DatabasePath))
 			{
 				Model.Prepositions = DatabaseOps.GetPrepositions();
 				DatabaseOps.CloseConnection();
@@ -155,14 +131,27 @@ namespace MediumLib.Tests
 		[TestMethod()]
 		public void GetConjunctionsTest()
 		{
-			Model.ConnectionString = FileOps.GetConnectionString(Model.ConnectionStringFilePath);
-			// arrange.
-
-			if (DatabaseOps.OpenConnection(Model.ConnectionString))
+			if (DatabaseOps.OpenConnection(Model.DatabasePath))
 			{
 				Model.Conjunctions = DatabaseOps.GetConjunctions();
 				DatabaseOps.CloseConnection();
 				Assert.IsTrue(Model.Conjunctions.Count > 0);
+			}
+			else
+			{
+				Assert.Fail();
+			}
+			// act & assert.
+		}
+
+		[TestMethod()]
+		public void GetSentenceStructuresTest()
+		{
+			if (DatabaseOps.OpenConnection(Model.DatabasePath))
+			{
+				Model.SentenceStructures = DatabaseOps.GetSentenceStructures();
+				DatabaseOps.CloseConnection();
+				Assert.IsTrue(Model.SentenceStructures.Count > 0);
 			}
 			else
 			{
