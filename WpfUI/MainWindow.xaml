@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfUI"
         mc:Ignorable="d"
-        Title="The Dude Medium" Height="385" Width="590" WindowStartupLocation="CenterScreen" MinWidth="215" MinHeight="100">
+        Title="The Dude Medium" Height="385" Width="590" WindowStartupLocation="CenterScreen" MinWidth="215" MinHeight="100" Icon="logo.png" Topmost="True" ScrollViewer.VerticalScrollBarVisibility="Disabled" UseLayoutRounding="True">
     <Window.Background>
         <ImageBrush Stretch="Uniform"/>
     </Window.Background>
