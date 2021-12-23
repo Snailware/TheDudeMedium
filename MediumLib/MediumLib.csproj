@@ -84,10 +84,9 @@
     <Compile Include="Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Prophecy.cs" />
-    <Compile Include="Randomizer.cs" />
+    <Compile Include="RandomNumber.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ConnectionString.txt" />
     <Content Include="Images\10.png" />
     <Content Include="Images\100.png" />
     <Content Include="Images\101.png" />

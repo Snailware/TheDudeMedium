@@ -13,6 +13,8 @@ namespace MediumLib
 	/// </summary>
 	public static class DatabaseOps
 	{
+
+
 		/// <summary>
 		/// open connection to database.
 		/// </summary>
