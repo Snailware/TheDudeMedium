@@ -25,15 +25,7 @@ namespace MediumLib
 			string connectionString = $"Data Source={Path.GetFullPath(databasePath)}";
 			Connection = new SQLiteConnection(connectionString);
 			Connection.Open();
-
-			if (Connection.State is ConnectionState.Open)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
+			return Connection.State is ConnectionState.Open;
 		}
 
 		/// <summary>
@@ -45,14 +37,7 @@ namespace MediumLib
 			if (Connection.State is ConnectionState.Open)
 			{
 				Connection.Close();
-				if (Connection.State is ConnectionState.Closed)
-				{
-					return true;
-				} 
-				else
-				{
-					return false;
-				}
+				return Connection.State is ConnectionState.Closed;
 			}
 			else
 			{
