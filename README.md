@@ -73,7 +73,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<!--![The Dude Medium](images/screenshot.png)-->
+<div align="center">
+  <img align ="center" src="https://raw.githubusercontent.com/Snailware/TheDudeMedium/master/MediumLib/Images/247.png" alt="screenshot" width="75%" height="auto">
+</div>
+</br>
 
 <p align="left">This program will randomly generate prophecies and visions from The Dude, the main character from <a href="https://www.imdb.com/title/tt0118715/">The Big Lebowski</a>.</p>
 
@@ -127,9 +131,7 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+Start the program and click the `button_text` button in the bottom left corner to get a prophecy. Repeat as desired. Click the `button_text` button in the bottom right corner when finished to close the program.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -137,11 +139,6 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 <!-- ROADMAP -->
 ## Roadmap
-
-- [] Feature 1
-- [] Feature 2
-- [] Feature 3
-    - [] Nested Feature
 
 See the [open issues](https://github.com/Snailware/TheDudeMedium/issues) for a full list of proposed features (and known issues).
 
@@ -170,7 +167,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the GNU-3.0 License. See [LICENSE](https://github.com/Snailware/TheDudeMedium/blob/master/LICENSE) for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -190,9 +187,8 @@ Project Link: [https://github.com/Snailware/TheDudeMedium](https://github.com/Sn
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* [Terry Davis](https://en.wikipedia.org/wiki/Terry_A._Davis) - This program is loosely based on the oracle program in [TempleOS](https://templeos.org/). *Rest in peace, Terry.*
+* [Adam Ralph](https://github.com/adamralph) - `icon.png` copied from [adamralph/dude](https://github.com/adamralph/dude).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -200,14 +196,11 @@ Project Link: [https://github.com/Snailware/TheDudeMedium](https://github.com/Sn
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/Snailware/TheDudeMedium.svg?style=for-the-badge
+<!--
 [contributors-url]: https://github.com/Snailware/TheDudeMedium/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Snailware/TheDudeMedium.svg?style=for-the-badge
 [forks-url]: https://github.com/Snailware/TheDudeMedium/network/members
-[stars-shield]: https://img.shields.io/github/stars/Snailware/TheDudeMedium.svg?style=for-the-badge
 [stars-url]: https://github.com/Snailware/TheDudeMedium/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Snailware/TheDudeMedium.svg?style=for-the-badge
 [issues-url]: https://github.com/Snailware/TheDudeMedium/issues
-[license-shield]: https://img.shields.io/github/license/Snailware/TheDudeMedium.svg?style=for-the-badge
-[license-url]: https://github.com/Snailware/TheDudeMedium/blob/master/LICENSE.txt
+[license-url]: https://github.com/Snailware/TheDudeMedium/blob/master/LICENSE
+-->
 [product-screenshot]: images/screenshot.png
