@@ -18,15 +18,15 @@ namespace MediumLib.Tests
 		}
 
 		[TestMethod()]
-		public void CreateProphecyTest()
+		public void CreateNewProphecyTest()
 		{
 			bool propheciesEqual = false;
 			Controller.Setup();
 			// arrange.
 
-			Prophecy prophecy1 = Controller.CreateProphecy();
-			Prophecy prophecy2 = Controller.CreateProphecy();
-			Prophecy prophecy3 = Controller.CreateProphecy();
+			Prophecy prophecy1 = Controller.CreateNewProphecy();
+			Prophecy prophecy2 = Controller.CreateNewProphecy();
+			Prophecy prophecy3 = Controller.CreateNewProphecy();
 			if (prophecy1 == prophecy2 &&
 				prophecy2 == prophecy3)
 			{
@@ -83,8 +83,8 @@ namespace MediumLib.Tests
 				 fifteenFound = false, sixteenFound = false,
 				 seventeenFound = false, eighteenFound = false,
 				 nineteenFound = false, twentyFound = false,
-				 twentyOneFound = false, capitalized = false, 
-				 punctuated = false, shortFound = false, 
+				 twentyOneFound = false, capitalized = false,
+				 punctuated = false, shortFound = false,
 				 mediumFound = false, longFound = false;
 
 			Model.Nouns = new List<string> { "one", "two", "three" };
@@ -212,7 +212,7 @@ namespace MediumLib.Tests
 					twelveFound && thirteenFound && fourteenFound &&
 					fifteenFound && sixteenFound && seventeenFound &&
 					eighteenFound && nineteenFound && twentyFound &&
-					twentyOneFound && capitalized && punctuated && 
+					twentyOneFound && capitalized && punctuated &&
 					shortFound && mediumFound && longFound)
 				{
 					break;
@@ -253,9 +253,21 @@ namespace MediumLib.Tests
 						  twelveFound && thirteenFound && fourteenFound &&
 						  fifteenFound && sixteenFound && seventeenFound &&
 						  eighteenFound && nineteenFound && twentyFound &&
-						  twentyOneFound && capitalized && punctuated && 
+						  twentyOneFound && capitalized && punctuated &&
 						  shortFound && mediumFound && longFound);
 			// assert.
+		}
+
+		[TestMethod()]
+		public void GetProphecyTest()
+		{
+			Assert.Fail();
+		}
+
+		[TestMethod()]
+		public void UpdateQueueTest()
+		{
+			Assert.Fail();
 		}
 	}
 }
