@@ -67,9 +67,10 @@
 
 ## About The Project
 
-<!--![The Dude Medium](images/screenshot.png)-->
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Snailware/TheDudeMedium/master/MediumLib/Images/247.png" alt="screenshot" width="80%" height="auto">
+  <a href="https://github.com/Snailware/TheDudeMedium">
+    <img src="images/screenshot.png" alt="screenshot" width="80%" height="auto">
+  </a>
 </div>
 </br>
 
@@ -89,32 +90,22 @@
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-
--   npm
-    ```sh
-    npm install npm@latest -g
-    ```
+-   [Windows 10](https://www.microsoft.com/en-us/software-download/windows10)
+-   [Visual Studio](https://visualstudio.microsoft.com/vs/community/)
 
 ### Installation
 
-1. Clone the repo
+1.  [Download ZIP](https://github.com/Snailware/TheDudeMedium/archive/refs/heads/master.zip) and extract contents, **or** clone the repo:
+
     ```sh
     git clone https://github.com/Snailware/TheDudeMedium.git
     ```
-2. Install NPM packages
-    ```sh
-    npm install
-    ```
-3. Enter your API in `config.js`
-    ```js
-    const API_KEY = "ENTER YOUR API";
-    ```
+
+2.  Open the Solution using [Visual Studio](https://visualstudio.microsoft.com/vs/community/).
+
+3.  Build solution as desired.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -187,5 +178,3 @@ Project Link: [https://github.com/Snailware/TheDudeMedium](https://github.com/Sn
 [issues-url]: https://github.com/Snailware/TheDudeMedium/issues
 [license-url]: https://github.com/Snailware/TheDudeMedium/blob/master/LICENSE
 -->
-
-[product-screenshot]: images/screenshot.png
