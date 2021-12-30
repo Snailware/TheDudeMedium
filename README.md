@@ -166,6 +166,7 @@ Project Link: [https://github.com/Snailware/TheDudeMedium](https://github.com/Sn
 
 -   [Terry Davis](https://en.wikipedia.org/wiki/Terry_A._Davis) - This program is loosely based on the oracle program in [TempleOS](https://templeos.org/). _Rest in peace, Terry._
 -   [Adam Ralph](https://github.com/adamralph) - `icon.png` copied from [adamralph/dude](https://github.com/adamralph/dude).
+-   [Othneil Drew](https://github.com/othneildrew) - `README.md` created using [Best-README-Template](https://github.com/othneildrew/Best-README-Template).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
