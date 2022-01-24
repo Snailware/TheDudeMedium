@@ -146,7 +146,7 @@ Don't forget to give the project a star! Thanks again!
 
 ## License
 
-Distributed under the GNU-3.0 License. See [LICENSE](https://github.com/Snailware/TheDudeMedium/blob/master/LICENSE) for more information.
+Distributed under the GPL-3.0 License. See [LICENSE](https://github.com/Snailware/TheDudeMedium/blob/master/LICENSE) for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
